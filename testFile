@@ -1,0 +1,15 @@
+{
+    "greeting": "Hi {{-name}}, what course would you like to take?",
+    "active_filters": "Active filters",
+    "resume_courses": "Resume courses",
+    "required_courses": "Required courses",
+    "popular_courses": "Popular courses",
+    "just_added": "Just added",
+    "browse_by_skills": "Browse courses by skill",
+    "completed": "Completed",
+    "overview_title": "Overview",
+    "bundles": "Course bundles",
+    "upcoming_events": "Upcoming events",
+    "recommended_to_you": "Recommended to you",
+    "recommendations_lane_description": "Recommendations from your manager based on your interests and need"
+}

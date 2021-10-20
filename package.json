@@ -1,0 +1,25 @@
+{
+  "name": "poedit-import",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./build/index.js",
+    "build": "tsc -p .",
+    "dev": "npm run build && npm start",
+    "clean:install": "rm -rf node_modules build && npm i"
+  },
+  "author": "Stijn de Ligt <stijndeligt@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.23.0",
+    "dotenv": "^10.0.0",
+    "gts": "^3.1.0",
+    "qs": "^6.10.1",
+    "typescript": "^4.4.4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1",
+    "@types/qs": "^6.9.7"
+  }
+}
