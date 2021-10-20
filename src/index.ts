@@ -1,40 +1,19 @@
-import https from "https";
-import fs from "fs";
-import axios from "axios";
-import { getLanguages } from "./get-languages";
-import { generateExport } from "./generate-export";
-import dotenv from "dotenv";
+#! /usr/bin/env node
 
-/** Load environment variables */
-dotenv.config();
-const project = parseInt(process.env.PROJECT || "", 10);
-const token = process.env.API_KEY || "";
+import { poeditImport } from "./poedit-import";
 
-/** Documentation can be found at https://poeditor.com/docs/api */
-const poeditorApi = axios.create({
-  baseURL: "https://api.poeditor.com/v2",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded",
-  },
-});
+const main = async (configFilePath: string) => {
+  if (!configFilePath) {
+    throw Error("No config provided, please provide a path to a json file.");
+  }
 
-const main = async () => {
-  const languages = await getLanguages(poeditorApi, token, project);
+  const config = await import(configFilePath);
 
-  const exportLink = await generateExport(
-    poeditorApi,
-    token,
-    project,
-    "en-us",
-    "overview"
-  );
+  if (!config.token || !config.project || !config.outDir) {
+    throw Error("Invalid config provided, please check the readme at ---.");
+  }
 
-  const path = "./testFile";
-
-  const file = fs.createWriteStream(path);
-  const request = https.get(exportLink, function (response) {
-    response.pipe(file);
-  });
+  poeditImport(config);
 };
 
-main();
+main(process.argv[2]);

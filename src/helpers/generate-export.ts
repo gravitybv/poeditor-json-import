@@ -1,5 +1,6 @@
-import { AxiosInstance } from "axios";
 import qs from "qs";
+
+import { poeditorApi } from "./api-connector";
 
 interface Response {
   data: {
@@ -10,11 +11,10 @@ interface Response {
 }
 
 export const generateExport = async (
-  poeditorApi: AxiosInstance,
   token: string,
-  project: number,
+  project: string,
   language: string,
-  tag: string
+  tag?: string
 ) => {
   const { data } = (await poeditorApi.post(
     "/projects/export",

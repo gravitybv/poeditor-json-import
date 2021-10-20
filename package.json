@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./build/index.js",
     "build": "tsc -p .",
-    "dev": "npm run build && npm start",
+    "dev": "npm run build && npm start $(pwd)/config.json",
     "clean:install": "rm -rf node_modules build && npm i"
   },
   "author": "Stijn de Ligt <stijndeligt@gmail.com>",
@@ -21,5 +21,8 @@
   "devDependencies": {
     "@types/node": "^16.11.1",
     "@types/qs": "^6.9.7"
+  },
+  "bin": {
+    "poedit-import": "build/index.js"
   }
 }

@@ -1,5 +1,5 @@
-import { AxiosInstance } from "axios";
 import qs from "qs";
+import { poeditorApi } from "./api-connector";
 
 interface Response {
   data: {
@@ -9,11 +9,8 @@ interface Response {
   };
 }
 
-export const getLanguages = async (
-  poeditorApi: AxiosInstance,
-  token: string,
-  project: number
-) => {
+/** Get all languages available in the project. */
+export const getLanguages = async (token: string, project: string) => {
   const { data } = (await poeditorApi.post(
     "/languages/list",
     qs.stringify({
