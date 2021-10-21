@@ -1,5 +1,6 @@
 import { createFileFromDownloadLink } from "./helpers/create-file-from-download-link";
 import { generateExport } from "./helpers/generate-export";
+import { progressBar } from "./helpers/progress-bar";
 import { Config } from "./types/config";
 
 export const importForAllTags = async (language: string, config: Config) => {
@@ -13,4 +14,6 @@ export const importForAllTags = async (language: string, config: Config) => {
   }
 
   createFileFromDownloadLink(exportLink, config, language);
+
+  progressBar.increment();
 };
