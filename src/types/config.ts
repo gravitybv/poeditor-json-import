@@ -5,4 +5,5 @@ export interface Config {
   tags?: string[];
   languages?: string[];
   concurrency?: number;
+  transformLocaleCodes?: any[];
 }

@@ -2,7 +2,11 @@
   "token": "12345",
   "project": "12345",
   "outDir": "",
+  "concurrency": 3,
   "tags": ["common"],
   "languages": ["en-us"],
-  "concurrency": 3
+  "transformLocaleCodes": {
+    "en-us": "en_US",
+    "en-gb": "en_UK"
+  }
 }
