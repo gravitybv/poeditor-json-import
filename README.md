@@ -5,7 +5,7 @@ Import translations from POeditor as json key value files.
 ### How to use:
 
 1. create a config.json like the sample in this repo.
-2. run `npx poedit-import $(pwd)./config.json`
+2. run `npx poeditor-json-import $(pwd)./config.json`
 3. ...
 4. profit!
 

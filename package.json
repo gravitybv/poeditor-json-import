@@ -1,5 +1,5 @@
 {
-  "name": "poedit-import",
+  "name": "poeditor-json-import",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -29,6 +29,6 @@
     "registry": "https://npm.pkg.github.com"
   },
   "bin": {
-    "poedit-import": "build/index.js"
+    "poeditor-json-import": "build/index.js"
   }
 }
