@@ -2,8 +2,6 @@
 name: Deploy to GH Packages
 
 env:
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-  GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
   NODE_VERSION: "14.x"
   SEMANTIC_RELEASE_VERSION: 18.0.0
 
@@ -25,7 +23,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           registry-url: https://registry.npmjs.org/
       - name: authenticate GH Packages
-        run: echo "//npm.pkg.github.com/:_authToken=${{ env.GITHUB_TOKEN }}" >> .npmrc
+        run: echo "//npm.pkg.github.com/:_authToken=${{ github.token }}" >> .npmrc
       - name: install
         run: npm ci
       - name: build
@@ -37,8 +35,8 @@ jobs:
         with:
           semantic_version: ${{ env.SEMANTIC_RELEASE_VERSION }}
         env:
-          GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ env.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
 
   sync:
     needs: deploy
