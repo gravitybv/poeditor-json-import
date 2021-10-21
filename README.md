@@ -16,6 +16,7 @@ Import translations from POeditor as json key value files.
 - outDir: Where the imported translations will be placed.
 - tags: Optional. A list of the tags you wish to import. When provided it will split the tags into seperate files named after the tag. When left empty it will download all tags into one file.
 - languages: Optional. A list of languages you wish to import. When provided it will split the files into seperate folders named after the translation. When left empty it will download for every language.
+- concurrency: Optional. Specify the amount of concurrent requests. Will set to a default of 2 if not provided. Increasing this number might cause throttling from POEditor, causing a crash.
 
 ### Run from original repo:
 

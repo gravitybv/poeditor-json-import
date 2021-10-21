@@ -6,5 +6,4 @@ export const createPathIfNotExists = (path: string) => {
   }
 
   fs.mkdirSync(path, { recursive: true });
-  console.log(`Created new dirs at ${path}`);
 };

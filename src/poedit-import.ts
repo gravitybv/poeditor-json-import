@@ -1,9 +1,10 @@
+import pMap from "p-map";
 import { getLanguages } from "./helpers/get-languages";
 import { importForLangage } from "./import-for-language";
 import { Config } from "./types/config";
 
 export const poeditImport = async (config: Config) => {
-  const { token, project } = config;
+  const { token, project, concurrency } = config;
   let languages = config.languages;
 
   if (!languages) {
@@ -12,5 +13,7 @@ export const poeditImport = async (config: Config) => {
 
   console.log(`Importing translations for languages ${languages.join(", ")}`);
 
-  languages.map((lang: string) => importForLangage(lang, config));
+  await pMap(languages, (lang: string) => importForLangage(lang, config), {
+    concurrency,
+  });
 };

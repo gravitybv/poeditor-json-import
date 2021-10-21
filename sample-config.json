@@ -3,5 +3,6 @@
   "project": "12345",
   "outDir": "",
   "tags": ["common"],
-  "languages": ["en-us"]
+  "languages": ["en-us"],
+  "concurrency": 3
 }

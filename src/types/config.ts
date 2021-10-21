@@ -4,4 +4,5 @@ export interface Config {
   outDir: string;
   tags?: string[];
   languages?: string[];
+  concurrency?: number;
 }
