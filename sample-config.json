@@ -3,6 +3,7 @@
   "project": "12345",
   "outDir": "",
   "concurrency": 3,
+  "sort": true,
   "tags": ["common"],
   "languages": ["en-us"],
   "transformLocaleCodes": {

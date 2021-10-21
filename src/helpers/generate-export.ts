@@ -14,6 +14,7 @@ export const generateExport = async (
   token: string,
   project: string,
   language: string,
+  sort?: boolean,
   tag?: string
 ) => {
   const { data } = (await poeditorApi.post(
@@ -23,6 +24,7 @@ export const generateExport = async (
       id: project,
       type: "key_value_json",
       language: language,
+      order: sort ? "terms" : undefined,
       tags: tag,
     })
   )) as Response;
