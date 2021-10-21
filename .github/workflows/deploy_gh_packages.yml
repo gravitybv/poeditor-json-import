@@ -5,7 +5,7 @@ env:
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
   NODE_VERSION: "14.x"
-  SEMANTIC_RELEASE_VERSION: 17.1.1
+  SEMANTIC_RELEASE_VERSION: 18.0.0
 
 on:
   push:
