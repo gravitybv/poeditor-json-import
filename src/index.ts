@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-import { poeditImport } from "./poedit-import";
+import { poeditImport } from "./poeditor-json-import";
 import { Config } from "./types/config";
 
 const main = async (configFilePath: string) => {

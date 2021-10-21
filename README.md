@@ -1,11 +1,15 @@
-# POEdit import
+# POEditor JSON import
 
 Import translations from POeditor as json key value files.
+
+### Why:
+
+Having local json files of translations is better for performance than retrieving them from an API. Splitting this up for tags means you don't have to load all translations on each page. However, importing this can be a pain. Using this command you can automate this task as part of your docker build, or run manually and keep the json files in your repo.
 
 ### How to use:
 
 1. create a config.json like the sample in this repo.
-2. run `npx poedit-import $(pwd)./config.json`
+2. run `npx poeditor-json-import $(pwd)/config.json`
 3. ...
 4. profit!
 
