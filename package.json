@@ -1,16 +1,19 @@
 {
-  "name": "poeditor-json-import",
-  "version": "1.0.0",
+  "name": "@gravitybv/poeditor-json-import",
+  "version": "0.0.0-development",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "start": "node ./build/index.js",
     "build": "tsc -p .",
     "dev": "npm run build && npm start $(pwd)/config.json",
     "clean:install": "rm -rf node_modules build && npm i"
   },
+  "files": [
+    "build"
+  ],
   "author": "Stijn de Ligt <s.deligt@gravity.com>",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.23.0",
     "cli-progress": "^3.9.1",
@@ -27,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gravitybv/poeditor-json-import"
+    "url": "git+https://github.com/gravitybv/poeditor-json-import.git"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
