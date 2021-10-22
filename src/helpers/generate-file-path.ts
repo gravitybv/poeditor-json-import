@@ -1,22 +1,23 @@
+import * as path from "path";
 import { createPathIfNotExists } from "./create-path";
 import { transformLocaleCode } from "./locale-code-transformer";
 
-export const generateFilePath = (
+export const generateFilePath = async (
   outDir: string,
   language: string,
   transformLocaleCodes?: any[],
   tag?: string
-): string => {
+): Promise<string> => {
   const transformedLanguage = transformLocaleCode(
     language,
     transformLocaleCodes
   );
-  const dirs = `${outDir}/${transformedLanguage}`;
+  const dirs = path.join(outDir, transformedLanguage);
 
   const fileName = `${tag || transformedLanguage}.json`;
-  const path = `${dirs}/${fileName}`;
+  const filePath = path.join(dirs, fileName);
 
-  createPathIfNotExists(dirs);
+  await createPathIfNotExists(dirs);
 
-  return path;
+  return filePath;
 };
