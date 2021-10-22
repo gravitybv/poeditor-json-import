@@ -23,6 +23,7 @@ export const generateExport = async (
       api_token: token,
       id: project,
       type: "key_value_json",
+      filters: "translated",
       language: language,
       order: sort ? "terms" : undefined,
       tags: tag,
