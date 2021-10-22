@@ -19,7 +19,7 @@ export const importForAllTags = async (language: string, config: Config) => {
     throw Error("Export not received");
   }
 
-  createFileFromDownloadLink(exportLink, config, language);
+  await createFileFromDownloadLink(exportLink, config, language);
 
   progressBar.increment();
 };
