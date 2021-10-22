@@ -32,7 +32,7 @@ export const generateExport = async (
   )) as Response;
 
   if (!data?.result?.url) {
-    throw Error("No export receievd");
+    throw Error("Can't retrieve export. Is your API token correct?");
   }
 
   return data.result.url;

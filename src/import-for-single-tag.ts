@@ -24,7 +24,7 @@ export const importForSingleTag = async (
     throw Error("Export not received");
   }
 
-  await createFileFromDownloadLink(exportLink, config, language, tag);
-
   progressBar.increment();
+
+  return createFileFromDownloadLink(exportLink, config, language, tag);
 };
