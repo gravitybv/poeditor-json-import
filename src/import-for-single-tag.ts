@@ -8,10 +8,17 @@ export const importForSingleTag = async (
   tag: string,
   config: Config
 ) => {
-  const { token, project, sort } = config;
+  const { token, project, sort, filter } = config;
 
   /** Call API and receive the export link */
-  const exportLink = await generateExport(token, project, language, sort, tag);
+  const exportLink = await generateExport(
+    token,
+    project,
+    language,
+    sort,
+    filter,
+    tag
+  );
 
   if (!exportLink) {
     throw Error("Export not received");

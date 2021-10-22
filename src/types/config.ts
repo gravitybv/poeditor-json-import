@@ -3,6 +3,7 @@ export interface Config {
   project: string;
   outDir: string;
   sort?: boolean;
+  filter?: string;
   tags?: string[];
   languages?: string[];
   concurrency?: number;
