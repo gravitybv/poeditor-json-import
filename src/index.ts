@@ -11,10 +11,14 @@ const main = async (configFilePath: string) => {
   const config = (await import(configFilePath)) as Config;
 
   if (!config.token || !config.project || !config.outDir) {
-    throw Error("Invalid config provided, please check the readme at ---.");
+    throw Error(
+      "Invalid config provided, please check the readme at https://github.com/gravitybv/poeditor-json-import."
+    );
   }
 
-  config.concurrency = config.concurrency || 2;
+  if (!config.concurrency) {
+    config.concurrency = 2;
+  }
 
   poeditImport(config);
 };

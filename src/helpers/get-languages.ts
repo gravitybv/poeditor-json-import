@@ -20,7 +20,7 @@ export const getLanguages = async (token: string, project: string) => {
   )) as Response;
 
   if (!data?.result?.languages) {
-    throw Error("No languages receievd");
+    throw Error("Can't retrieve languages. Is your API token correct?");
   }
 
   const languages = data?.result?.languages;
