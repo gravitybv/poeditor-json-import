@@ -3,4 +3,4 @@
 /translations
 
 .env
-config.json
+poeditor-import.config.js

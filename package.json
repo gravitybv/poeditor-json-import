@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./build/index.js",
     "build": "tsc -p .",
-    "dev": "npm run build && npm start $(pwd)/config.json",
+    "dev": "npm run build && npm start",
     "clean:install": "rm -rf node_modules build && npm i"
   },
   "files": [
@@ -17,6 +17,7 @@
   "dependencies": {
     "axios": "^0.23.0",
     "cli-progress": "^3.9.1",
+    "cosmiconfig": "^7.0.1",
     "dotenv": "^10.0.0",
     "p-map": "^4.0.0",
     "qs": "^6.10.1"

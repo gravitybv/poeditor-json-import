@@ -1,14 +1,11 @@
 #! /usr/bin/env node
 
+import { readConfig } from "./helpers/read-config";
 import { poeditImport } from "./poeditor-json-import";
 import { Config } from "./types/config";
 
-const main = async (configFilePath: string) => {
-  if (!configFilePath) {
-    throw Error("No config provided, please provide a path to a json file.");
-  }
-
-  const config = (await import(configFilePath)) as Config;
+const main = async () => {
+  const config: Config = await readConfig("poeditor-import");
 
   if (!config.token || !config.project || !config.outDir) {
     throw Error(
@@ -23,4 +20,4 @@ const main = async (configFilePath: string) => {
   poeditImport(config);
 };
 
-main(process.argv[2]);
+main();
