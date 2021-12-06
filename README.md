@@ -9,7 +9,7 @@ Having local json files of translations is better for performance than retrievin
 ### How to use:
 
 1. create a poeditor-import.config.js like the sample in this repo.
-2. run `npx poeditor-json-import`
+2. run `npx @gravitybv/poeditor-json-import`
 3. ...
 4. profit!
 
