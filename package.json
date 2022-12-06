@@ -20,7 +20,7 @@
     "cosmiconfig": "^7.0.1",
     "dotenv": "^10.0.0",
     "p-map": "^4.0.0",
-    "qs": "^6.10.1"
+    "qs": "^6.10.3"
   },
   "devDependencies": {
     "@types/cli-progress": "^3.9.2",
